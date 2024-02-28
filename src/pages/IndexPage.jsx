@@ -69,7 +69,7 @@ function IndexPage() {
           </Carousel>
         </div>
       </div>
-      <div className="z-50">
+      <div className="z-50 sm:w-full">
         <img
           src={img2}
           className="xl:-mt-10 xl:w-5/12 xl:h-5/6 xl:z-50 xl:ml-20 h-[500px] w-full absolute"

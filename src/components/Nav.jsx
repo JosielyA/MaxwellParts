@@ -32,17 +32,17 @@ function Nav() {
     catalogo: {
       inicio_xl: "xl:w-[80px] xl:mr-[518px]",
       inicio_md: "md:w-[80px] md:mr-[335px]",
-      inicio_sm: "w-[70px] mr-[284px]",
+      inicio_sm: "w-[70px] mr-[283px]",
     },
     nosotros: {
       inicio_xl: "xl:w-[80px] xl:mr-[290px]",
       inicio_md: "md:w-[80px] md:mr-[185px]",
-      inicio_sm: "w-[70px] mr-[156px]",
+      inicio_sm: "w-[70px] mr-[154px]",
     },
     contacto: {
       inicio_xl: "xl:w-[80px] xl:mr-[60px]",
       inicio_md: "md:w-[80px] md:mr-[30px]",
-      inicio_sm: "w-[70px] mr-[26px]",
+      inicio_sm: "w-[70px] mr-[25px]",
     },
   };
 
