@@ -32,7 +32,7 @@ function Nav() {
     catalogo: {
       inicio_xl: "xl:w-[80px] xl:mr-[518px]",
       inicio_md: "md:w-[80px] md:mr-[335px]",
-      inicio_sm: "w-[70px] mr-[285px]",
+      inicio_sm: "w-[70px] mr-[200px]",
     },
     nosotros: {
       inicio_xl: "xl:w-[80px] xl:mr-[290px]",
