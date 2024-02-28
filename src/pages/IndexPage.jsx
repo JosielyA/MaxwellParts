@@ -75,7 +75,7 @@ function IndexPage() {
           className="xl:-mt-10 xl:w-5/12 xl:h-5/6 xl:z-50 xl:ml-20 h-[500px] w-full absolute"
         />
         <div className="absolute z-30 text-black h-4/5 w-full flex items-center place-content-center">
-          <div className="xl:mx-10 xl:w-5/12 w-9/12 xl:mt-20 xl:absolute inset-y-0 xl:right-12 bg-white bg-opacity-50 mb-16 p-4 xl:bg-transparent xl:p-0 xl:mb-0">
+          <div className="xl:mx-10 xl:w-5/12 w-full xl:mt-20 xl:absolute inset-y-0 xl:right-12 bg-white bg-opacity-50 mb-16 p-4 xl:bg-transparent xl:p-0 xl:mb-0">
             <h1 className="font-bold text-3xl mb-2 uppercase">
               Servicio Al Cliente
               <span className="text-myred"> Excepcional.</span>
