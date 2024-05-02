@@ -1,0 +1,168 @@
+export const productsName = [
+  { nombre: "COPA DE COBRE", url: "31 COPA DE COBRE.jpg" },
+  {
+    nombre: "CAPACITOR ACEITE MAXWELL",
+    url: "17 CAPACITOR ACEITE MAXWELL.jpg",
+  },
+  { nombre: "CINTA DE ALUMINIO", url: "24 CINTA DE ALUMINIO.jpg" },
+  {
+    nombre: "CAPACITOR ACEITE MAXWELL",
+    url: "19 CAPACITOR ACEITE MAXWELL.jpg",
+  },
+  { nombre: "FUNDENTE PARA SOLDAR", url: "40 FUNDENTE PARA SOLDAR.jpg" },
+  { nombre: "CONTACTOR MAXWEELL P", url: "29 CONTACTOR MAXWEELL 2P.jpg" },
+  { nombre: "CAPACITOR PLAST", url: "21 CAPACITOR PLAST.jpg" },
+  {
+    nombre: "RESISTENCIA HIERRO MAXWELL",
+    url: "64 RESISTENCIA HIERRO MAXWELL.jpg",
+  },
+  { nombre: "CAPACITOR BLANCO", url: "20 CAPACITOR BLANCO.jpg" },
+  {
+    nombre: "RELOJ DE NEVERA AJUSTABLE",
+    url: "62 RELOJ DE NEVERA AJUSTABLE.jpg",
+  },
+  {
+    nombre: "COMPRESOR NEVERA MAXWELL",
+    url: "28 COMPRESOR NEVERA MAXWELL.jpg",
+  },
+  { nombre: "MOTOR VENT MAXWELL", url: "46 MOTOR VENT MAXWELL.jpg" },
+  {
+    nombre: "BIMETAL MAXWELL BLISTER LG",
+    url: "7 BIMETAL MAXWELL BLISTER LG 66151.jpg",
+  },
+  { nombre: "ROLINERA", url: "68 ROLINERA.jpg" },
+  {
+    nombre: "BIMETAL MAXWELL BLISTER SAMSUNG WHIRPOOL",
+    url: "13 BIMETAL MAXWELL BLISTER SAMSUNG WHIRPOOL.jpg",
+  },
+  { nombre: "MOTOR W", url: "45 MOTOR 10W.jpg" },
+  {
+    nombre: "PICO PARA SOLDAR MAXWELL",
+    url: "48 PICO PARA SOLDAR MAXWELL.jpg",
+  },
+  {
+    nombre: "JUEGO DE MANGUERA PARA MANOMETRO",
+    url: "42 JUEGO DE MANGUERA PARA MANOMETRO.jpg",
+  },
+  { nombre: "RELAY DE NEVERA HP", url: "57 RELAY DE NEVERA 13HP.jpg" },
+  {
+    nombre: "AMPERIMETRO DIGITAL PEQUEÑO",
+    url: "4 AMPERIMETRO DIGITAL PEQUEÑO.jpg",
+  },
+  { nombre: "RELAY CUCARACHA", url: "56 RELAY CUCARACHA.jpg" },
+  { nombre: "BOMBONA AMARILLA", url: "14 BOMBONA AMARILLA.jpg" },
+  { nombre: "CORTA CAPILAR", url: "32 CORTA CAPILAR.jpg" },
+  {
+    nombre: "BIMETAL MAXWELL BLISTER SAMSUNG DAF",
+    url: "10 BIMETAL MAXWELL BLISTER SAMSUNG DA4710150F.jpg",
+  },
+  { nombre: "RELAY FAN", url: "58 RELAY FAN 364.jpg" },
+  {
+    nombre: "CORTA TUBO GRANDE HEAVY DUTY",
+    url: "33 CORTA TUBO GRANDE HEAVY DUTY.jpg",
+  },
+  { nombre: "RELAY MARRON MAXWELL", url: "59 RELAY MARRON MAXWELL.jpg" },
+  {
+    nombre: "TARJETA UNIVERSAL PARA AIRE",
+    url: "72 TARJETA UNIVERSAL PARA AIRE.jpg",
+  },
+  { nombre: "AMPERIMETRO", url: "4 AMPERIMETRO.jpg" },
+  {
+    nombre: "BIMETAL DE NEVERA MAXWELL",
+    url: "6 BIMETAL DE NEVERA MAXWELL.jpg",
+  },
+  { nombre: "FILTRO STRAINER", url: "37 FILTRO STRAINER.jpg" },
+  {
+    nombre: "BIMETAL BLISTER SAMSUNG CABLE LARGO",
+    url: "8 BIMETAL BLISTER SAMSUNG CABLE LARGO.jpg",
+  },
+  { nombre: "ROLINERA TUBO", url: "68 ROLINERA TUBO.jpg" },
+  { nombre: "CONTACTOR MAXWELL P", url: "30 CONTACTOR MAXWELL 3P.jpg" },
+  { nombre: "TERMICO ELECTRINICO", url: "73 TERMICO ELECTRINICO.jpg" },
+  {
+    nombre: "MULTIAMPERIMETRO CAPACIMETRO",
+    url: "47 MULTIAMPERIMETRO CAPACIMETRO.jpg",
+  },
+  { nombre: "ROLINERA", url: "67 ROLINERA 6006.jpg" },
+  { nombre: "ROLINERA", url: "66 ROLINERA 6000.jpg" },
+  { nombre: "MEDIDOR CAPILAR", url: "43 MEDIDOR CAPILAR.jpg" },
+  { nombre: "PROTECTOR DE VOLT", url: "49 PROTECTOR DE VOLT 3.jpg" },
+  {
+    nombre: "FILTRO STRAINER  SALIDAS",
+    url: "38 FILTRO STRAINER 4 SALIDAS.jpg",
+  },
+  { nombre: "SUPER START KIT", url: "71 SUPER START KIT.jpg" },
+  { nombre: "FILTRO SECADOR", url: "35 FILTRO SECADOR.jpg" },
+  { nombre: "CAPACITOR PLAST", url: "22  CAPACITOR PLAST.jpg" },
+  {
+    nombre: "VALVULA DE PINCHAR MAXWELL",
+    url: "74 VALVULA DE PINCHAR MAXWELL.jpg",
+  },
+  {
+    nombre: "AMPERIMETRO DIGITAL GRANDE MAXWELL",
+    url: "3 AMPERIMETRO DIGITAL GRANDE MAXWELL.jpg",
+  },
+  { nombre: "PROTECTOR DE VOLT  VOL", url: "50 PROTECTOR DE VOLT 120 VOL.jpg" },
+  { nombre: "RELAY POTENCIAL", url: "60 RELAY POTENCIAL.jpg" },
+  { nombre: "FORRO PARA LAVAR AIRE", url: "39 FORRO PARA LAVAR AIRE.jpg" },
+  { nombre: "FILTRO SECADOR", url: "36 FILTRO SECADOR.jpg" },
+  { nombre: "RELOJ DE NEVERA", url: "62 RELOJ DE NEVERA.jpg" },
+  {
+    nombre: "SENSOR PARA AC PUNTA NEGRA",
+    url: "69 SENSOR PARA AC PUNTA NEGRA.jpg",
+  },
+  { nombre: "ADAPTADOR R-", url: "1 ADAPTADOR R-410.jpg" },
+  {
+    nombre: "RETARDADOR TIMER OF MAXWELL",
+    url: "65 RETARDADOR TIMER OF MAXWELL.jpg",
+  },
+  { nombre: "MONOMETRO CON MANG", url: "44 MONOMETRO CON MANG 36.jpg" },
+  { nombre: "DOBLADOR DE TUBO", url: "34 DOBLADOR DE TUBO.jpg" },
+  { nombre: "PROTECTOR DE VOLT", url: "52 PROTECTOR DE VOLT.jpg" },
+  {
+    nombre: "CAPILAR MAXWELL ALTA CALIDAD",
+    url: "23 CAPILAR MAXWELL ALTA CALIDAD.jpg",
+  },
+  { nombre: "COMPRESOR AA", url: "27 COMPRESOR AA.jpg" },
+  { nombre: "CINTA GRIS", url: "25 CINTA GRIS.jpg" },
+  { nombre: "PROTECTOR DE VOLT V", url: "51 PROTECTOR DE VOLT 220V.jpg" },
+  {
+    nombre: "CAPACITOR ACEITE MAXWELL",
+    url: "15 CAPACITOR ACEITE MAXWELL.jpg",
+  },
+  {
+    nombre: "BIMETAL BLISTER SAMSUNG DA",
+    url: "9 BIMETAL BLISTER SAMSUNG DA47101438.jpg",
+  },
+  { nombre: "RELAY PTC", url: "55 RELAY PTC.jpg" },
+  {
+    nombre: "BIMETAL MAXWELL BLISTER SAMSUNG DAF",
+    url: "11 BIMETAL MAXWELL BLISTER SAMSUNG DA4710160F.jpg",
+  },
+  {
+    nombre: "CAPACITOR ACEITE MAXWELL",
+    url: "18 CAPACITOR ACEITE MAXWELL.jpg",
+  },
+  {
+    nombre: "REALAY PARA TARJETA DE AIRE",
+    url: "54 REALAY PARA TARJETA DE AIRE.jpg",
+  },
+  {
+    nombre: "CAPACITOR ACEITE MAXWELL",
+    url: "16 CAPACITOR ACEITE MAXWELL.jpg",
+  },
+  {
+    nombre: "AMBIENTADOR ENERGIA SOLAR",
+    url: "2 AMBIENTADOR ENERGIA SOLAR.jpg",
+  },
+  {
+    nombre: "BIMETAL MASTER BLISTER SAMSUNG DAH",
+    url: "12 BIMETAL MASTER BLISTER SAMSUNG DA4710160H.jpg",
+  },
+  { nombre: "ARMAFLEX MAXWELL TUBE", url: "5 ARMAFLEX MAXWELL TUBE.jpg" },
+  { nombre: "CODO DE COBRE", url: "26 CODO DE COBRE.jpg" },
+  { nombre: "SENSOR", url: "70 SENSOR.jpg" },
+  { nombre: "RELOJ ROJO", url: "63 RELOJ ROJO.jpg" },
+  { nombre: "PROTECTOR DE VOLTAJE V", url: "53 PROTECTOR DE VOLTAJE 220V.jpg" },
+  { nombre: "GOMAS PARA VALVULAS", url: "41 GOMAS PARA VALVULAS.jpg" },
+];

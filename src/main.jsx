@@ -11,6 +11,7 @@ import ProductsPage from "./pages/ProductsPage";
 import ContactPage from "./pages/ContactPage";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import { NewProducts } from "./pages/NewProducts";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         path: "/contacto",
         element: <ContactPage />,
       },
+      {
+        path: "/new",
+        element: <NewProducts />,
+      },
     ],
   },
 ]);
@@ -47,5 +52,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <div>
       <Toaster />
     </div>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

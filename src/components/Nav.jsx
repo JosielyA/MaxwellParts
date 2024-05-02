@@ -23,43 +23,38 @@ function Nav() {
     navigate(`/catalogo/${busqueda}`);
   };
 
-  const line_positions = {
-    inicio: {
-      inicio_xl: "xl:w-[50px] xl:mr-[730px]",
-      inicio_md: "md:w-[50px] md:mr-[480px]",
-      inicio_sm: "w-[45px] mr-[408px]",
+  const pages = [
+    {
+      route: "/",
+      nombre: "INICIO",
     },
-    catalogo: {
-      inicio_xl: "xl:w-[80px] xl:mr-[518px]",
-      inicio_md: "md:w-[80px] md:mr-[335px]",
-      inicio_sm: "w-[70px] mr-[285px]",
+    {
+      route: "/catalogo",
+      nombre: "CATALOGO",
     },
-    nosotros: {
-      inicio_xl: "xl:w-[80px] xl:mr-[290px]",
-      inicio_md: "md:w-[80px] md:mr-[185px]",
-      inicio_sm: "w-[70px] mr-[155px]",
+    {
+      route: "/nosotros",
+      nombre: "NOSOTROS",
     },
-    contacto: {
-      inicio_xl: "xl:w-[80px] xl:mr-[60px]",
-      inicio_md: "md:w-[80px] md:mr-[30px]",
-      inicio_sm: "w-[70px] mr-[22px]",
+    {
+      route: "/contacto",
+      nombre: "CONTACTO",
     },
-  };
-
+  ];
   return (
     <>
       <Link to="/">
-        <img src={logo} alt="Logo" className="absolute xl:size-24 ml-5 mt-2" />
+        <img src={logo} alt="Logo" className="absolute ml-5 mt-2 xl:size-24" />
       </Link>
-      <div className="flex h-14 bg-black text-white items-center justify-end">
-        <div className="flex space-x-2 items-center">
+      <div className="flex h-14 items-center justify-end bg-black text-white">
+        <div className="flex items-center space-x-2">
           <div className="relative">
             <form onSubmit={goToSearch}>
               <input
                 onChange={handleInput}
                 type="text"
                 name="search"
-                className={`h-9 md:w-80 text-base rounded-sm border p-2 text-black
+                className={`h-9 rounded-sm border p-2 text-base text-black md:w-80
               ${location.includes("/catalogo") ? "hidden" : "visible"}
               `}
                 placeholder="Buscar una pieza..."
@@ -85,42 +80,18 @@ function Nav() {
           </a>
         </div>
       </div>
-      <div className="flex h-14  bg-myred text-white items-center font-bold  justify-end ">
-        <div
-          className="xl:space-x-28 space-x-10
-         xl:mr-12 mr-3 md:text-xl"
-        >
-          <Link to="/">INICIO</Link>
-          <Link to="/catalogo">CATALOGO</Link>
-          <Link to="/nosotros">NOSOTROS</Link>
-          <Link to="/contacto">CONTACTO</Link>
+      <div className="flex h-14  items-center justify-end bg-myred font-bold  text-white ">
+        <div className="mr-10 flex space-x-10">
+          {pages.map(({ nombre, route }, i) => (
+            <div key={i} className="flex place-content-center items-center">
+              <Link to={route}>{nombre}</Link>
+              <div
+                className={`${location == route ? "" : "opacity-0"} absolute mt-7 h-[5px] w-[50px] 
+        place-self-center rounded-full bg-white transition-all duration-500`}
+              ></div>
+            </div>
+          ))}
         </div>
-        <div
-          className={`bg-white h-[5px]  rounded-full absolute mt-8 
-        invisible md:visible
-        ${
-          location == "/"
-            ? `${line_positions.inicio.inicio_xl} ${line_positions.inicio.inicio_md} ${line_positions.inicio.inicio_sm}`
-            : ""
-        }
-        ${
-          location.includes("/catalogo")
-            ? `${line_positions.catalogo.inicio_xl} ${line_positions.catalogo.inicio_md} ${line_positions.catalogo.inicio_sm}`
-            : ""
-        }
-       ${
-         location == "/nosotros"
-           ? `${line_positions.nosotros.inicio_xl} ${line_positions.nosotros.inicio_md} ${line_positions.nosotros.inicio_sm}`
-           : ""
-       }
-       ${
-         location == "/contacto"
-           ? `${line_positions.contacto.inicio_xl} ${line_positions.contacto.inicio_md} ${line_positions.contacto.inicio_sm}`
-           : ""
-       }
-        
-        w-[45px] mr-[408px]`}
-        ></div>
       </div>
       <Outlet />
     </>
