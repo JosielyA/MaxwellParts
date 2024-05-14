@@ -37,7 +37,7 @@ function IndexPage() {
     <>
       <div className="z-20 justify-between md:flex-wrap lg:flex">
         <div>
-          <div className="z-30 flex h-[600px] items-center p-16 text-black xl:absolute xl:ml-9 xl:h-4/5 xl:w-6/12">
+          <div className="z-30 flex h-[600px] items-center p-16 text-black lg:absolute lg:ml-9 lg:h-4/5 lg:w-6/12">
             <div className="mx-10">
               <h1 className="mb-2 text-6xl font-bold uppercase">
                 Calidad
@@ -49,7 +49,7 @@ function IndexPage() {
               </h2>
               <Link
                 to="/catalogo"
-                className="items-center bg-myred p-4 text-2xl font-bold text-white xl:absolute"
+                className="items-center bg-myred p-4 text-2xl font-bold text-white lg:absolute"
               >
                 Catalogo
               </Link>
@@ -58,10 +58,10 @@ function IndexPage() {
 
           <img
             src={blanco}
-            className="invisible  absolute z-20 lg:w-4/6 xl:visible"
+            className="invisible  absolute z-20 lg:visible lg:w-4/6"
           />
         </div>
-        <div className="w-full xl:w-7/12">
+        <div className="w-full lg:w-7/12">
           <Carousel>
             {slides.map((s, i) => (
               <img key={i} src={s} />
@@ -69,25 +69,25 @@ function IndexPage() {
           </Carousel>
         </div>
       </div>
-      <div className="z-50 mt-5 flex h-[600px] place-content-center xl:mt-0 xl:h-[700px] xl:place-content-start">
+      <div className="z-50 mt-5 flex h-[600px] place-content-center lg:mt-0 lg:h-[700px] lg:place-content-start">
         <img
           src={img2}
-          className="absolute h-[500px] w-full xl:z-50 xl:-mt-10 xl:ml-20 xl:h-[700px] xl:w-5/12"
+          className="absolute h-[500px] w-full lg:z-50 lg:-mt-10 lg:ml-20 lg:h-[700px] lg:w-5/12"
         />
         <div className="absolute z-30 flex h-[700px] w-full place-content-center items-center text-black">
-          <div className="inset-y-0 mb-56 w-full flex-col place-content-center items-center bg-white bg-opacity-50 p-4 xl:absolute xl:right-12 xl:mx-10 xl:mb-0 xl:mt-20 xl:w-5/12 xl:bg-transparent xl:p-0">
+          <div className="inset-y-0 mb-56 w-full flex-col place-content-center items-center bg-white bg-opacity-50 p-4 lg:absolute lg:right-12 lg:mx-10 lg:mb-0 lg:mt-20 lg:w-5/12 lg:bg-transparent lg:p-0">
             <h1 className="mb-2 text-3xl font-bold uppercase">
               Servicio Al Cliente
               <span className="text-myred"> Excepcional.</span>
             </h1>
-            <h2 className="mb-4 text-2xl font-bold xl:mb-2">
+            <h2 className="mb-4 text-2xl font-bold lg:mb-2">
               Nuestra empresa se compromete a brindar un servicio al cliente
               excepcional, atento a sus necesidades y expectativas. Si tienes
               alguna sugerencia o duda...
             </h2>
             <Link
               to="/contacto"
-              className="items-center bg-myred p-4 text-xl font-bold text-white xl:absolute xl:text-2xl"
+              className="items-center bg-myred p-4 text-xl font-bold text-white lg:absolute lg:text-2xl"
             >
               Contactanos
             </Link>
@@ -100,16 +100,16 @@ function IndexPage() {
           <h2 className="mb-10 text-5xl">
             Lo que <span className="text-myred">ofrecemos</span>
           </h2>
-          <div className="flex-grap place-content-around xl:flex">
+          <div className="flex-grap place-content-around lg:flex">
             {ofrecemos.map((e, f) => (
-              <div key={f} className="my-8 p-5 xl:my-0 xl:p-0">
+              <div key={f} className="my-8 p-5 lg:my-0 lg:p-0">
                 <div className="flex place-content-around">
                   <img src={e.imagen} className="size-32" />
                 </div>
                 <div className="flex place-content-around">
                   <h3 className="mb-1 text-2xl font-bold">{e.titulo}</h3>
                 </div>
-                <div className="flex place-content-around leading-4 xl:w-[400px]">
+                <div className="flex place-content-around leading-4 lg:w-[400px]">
                   <p className="normal-case">{e.texto}</p>
                 </div>
               </div>

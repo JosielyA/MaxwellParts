@@ -1,6 +1,5 @@
 import Footer from "../components/Footer";
 import buscar from "../assets/buscar.png";
-import Product from "../components/Product";
 import algo from "../assets/productos/IMG_0629.png";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from "react";
@@ -138,7 +137,11 @@ function ProductsPage(props) {
                     </h2>
                   </div>
                   <div className="flex h-full place-content-end items-end  p-4 ">
-                    <a href="" className="text-sm font-bold text-myred">
+                    <a
+                      href={`https://wa.me/584129697361?text=${encodeURIComponent(`Hola! Quisiera información del producto '${nombre}' que esta publicado en su página web.`)}`}
+                      target="_blank"
+                      className="text-sm font-bold text-myred"
+                    >
                       Pregunta por este producto.
                     </a>
                   </div>

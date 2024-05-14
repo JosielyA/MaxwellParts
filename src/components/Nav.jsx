@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo-maxwell_100px.png";
-import face from "../assets/facebook.png";
+import tiktok from "../assets/icons/tik-tok.png";
 import insta from "../assets/instagram.png";
 import correo from "../assets/correo-electronico.png";
 import whats from "../assets/whatsapp.png";
@@ -66,17 +66,20 @@ function Nav() {
               </div>
             </form>
           </div>
-          <a href="#">
-            <img src={face} alt="Facebook" className="w-10" />
+          <a href="https://www.tiktok.com/@maxwellparts" target="_blank">
+            <img src={tiktok} alt="tiktok logo" className="w-10" />
           </a>
-          <a href="#">
-            <img src={insta} alt="Instagram" className="w-10" />
+          <a
+            href="https://www.instagram.com/maxwell.parts/?hl=es"
+            target="_blank"
+          >
+            <img src={insta} alt="Instagram logo" className="w-10" />
           </a>
-          <a href="#">
-            <img src={whats} alt="Whatsapp" className="w-10" />
+          <a href="https://wa.me/584129697361" target="_blank">
+            <img src={whats} alt="Whatsapp logo" className="w-10" />
           </a>
-          <a href="#">
-            <img src={correo} alt="Correo Electronico" className="w-10" />
+          <a href="mailto:admin@celena-internacional.com" target="_blank">
+            <img src={correo} alt="Email logo" className="w-10" />
           </a>
         </div>
       </div>

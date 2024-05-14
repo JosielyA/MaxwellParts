@@ -18,9 +18,9 @@ function Carousel({
     return () => clearInterval(slideInterval);
   }, []);
   return (
-    <div className="overflow-hidden relative">
+    <div className="relative overflow-hidden">
       <div
-        className="flex transition-transform ease-out duration-500"
+        className="flex transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides}
@@ -28,19 +28,19 @@ function Carousel({
       <div className="absolute inset-0 flex items-center justify-between p-4">
         <button
           onClick={prev}
-          className="rounded-full text-gray-800 z-30 xl:p-40"
+          className="z-30 rounded-full text-gray-800 lg:p-40"
         >
           <ChevronLeft size={40} />
         </button>
-        <button onClick={next} className="rounded-full text-gray-800 z-30">
+        <button onClick={next} className="z-30 rounded-full text-gray-800">
           <ChevronRight size={40} />
         </button>
       </div>
-      <div className="absolute bottom-4 right-0 left-0">
+      <div className="absolute bottom-4 left-0 right-0">
         <div className="flex items-center justify-center gap-2">
           {slides.map((_, i) => (
             <div
-              className={`transition-all w-2 h-2 bg-white rounded-full
+              className={`h-2 w-2 rounded-full bg-white transition-all
             ${curr == i ? "p-1" : "bg-opacity-50"}
             `}
             />
