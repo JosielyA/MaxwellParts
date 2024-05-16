@@ -3,12 +3,12 @@ import { toast } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 import Footer from "../components/Footer";
 import map from "../assets/maps.png";
-import tiktok from "../assets/icons/tiktok2.png";
-import whats from "../assets/icons_color/whats.png";
-import insta from "../assets/icons_color/instagram.png";
-import correo from "../assets/icons_color/correo-electronico.png";
-import horario from "../assets/icons/horario.png";
-import ubicacion from "../assets/icons/ubicacion.png";
+import tiktok from "../assets/tiktok2.png";
+import whats from "../assets/whats-color.png";
+import insta from "../assets/instagram-color.png";
+import correo from "../assets/correo-electronico-color.png";
+import horario from "../assets/horario.png";
+import ubicacion from "../assets/ubicacion.png";
 
 function ContactPage() {
   const form = useRef();

@@ -1,14 +1,13 @@
 import Carousel from "../components/Carousel";
 import { Link } from "react-router-dom";
-import slider1 from "../assets/productos/IMG_0629.png";
-import slider2 from "../assets/productos/IMG_0652.png";
-import slider3 from "../assets/productos/IMG_0689.png";
-import img2 from "../assets/icons_color/Call-center.png";
+import slider1 from "../assets/IMG_0629.png";
+import slider2 from "../assets/IMG_0652.png";
+import slider3 from "../assets/IMG_0689.png";
+import img2 from "../assets/Call-center.png";
 import blanco from "../assets/blanco diagonal.png";
-import tigre from "../assets/tigre.jpg";
-import dialogo from "../assets/icons/burbuja-de-dialogo.png";
-import producto from "../assets/icons/producto.png";
-import entrega from "../assets/icons/servicio-de-entrega.png";
+import dialogo from "../assets/burbuja-de-dialogo.png";
+import producto from "../assets/producto.png";
+import entrega from "../assets/servicio-de-entrega.png";
 import Footer from "../components/Footer";
 
 const slides = [slider1, slider2, slider3];
@@ -43,7 +42,7 @@ function IndexPage() {
                 Calidad
                 <span className="text-myred"> Garantizada.</span>
               </h1>
-              <h2 className="mb-4 text-xl font-bold leading-6">
+              <h2 className="mb-4 text-xl font-light leading-6">
                 Garantizamos la excelencia en cada artículo, desde la selección
                 de materiales hasta el proceso de fabricación. Revisa nuestro...
               </h2>
@@ -75,12 +74,12 @@ function IndexPage() {
           className="absolute h-[500px] w-full lg:z-50 lg:-mt-10 lg:ml-20 lg:h-[700px] lg:w-5/12"
         />
         <div className="absolute z-30 flex h-[700px] w-full place-content-center items-center text-black">
-          <div className="inset-y-0 mb-56 w-full flex-col place-content-center items-center bg-white bg-opacity-50 p-4 lg:absolute lg:right-12 lg:mx-10 lg:mb-0 lg:mt-20 lg:w-5/12 lg:bg-transparent lg:p-0">
-            <h1 className="mb-2 text-3xl font-bold uppercase">
+          <div className="inset-y-0 mb-56 w-full flex-col place-content-center items-center bg-gray-700/50 p-10 lg:absolute lg:right-12 lg:mx-10 lg:mb-0 lg:mt-20 lg:w-5/12 lg:bg-transparent lg:p-0">
+            <h1 className="mb-2 text-xl font-bold uppercase md:text-3xl">
               Servicio Al Cliente
               <span className="text-myred"> Excepcional.</span>
             </h1>
-            <h2 className="mb-4 text-2xl font-bold lg:mb-2">
+            <h2 className="mb-4 text-lg font-light md:text-2xl lg:mb-2">
               Nuestra empresa se compromete a brindar un servicio al cliente
               excepcional, atento a sus necesidades y expectativas. Si tienes
               alguna sugerencia o duda...
@@ -110,7 +109,7 @@ function IndexPage() {
                   <h3 className="mb-1 text-2xl font-bold">{e.titulo}</h3>
                 </div>
                 <div className="flex place-content-around leading-4 lg:w-[400px]">
-                  <p className="normal-case">{e.texto}</p>
+                  <p className="text-sm font-light normal-case">{e.texto}</p>
                 </div>
               </div>
             ))}

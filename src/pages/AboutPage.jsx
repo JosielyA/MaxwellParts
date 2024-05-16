@@ -2,10 +2,10 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import img1 from "../assets/nosotrosImg1.jpg";
 import img2 from "../assets/nosotrosImg2.jpg";
-import cooperar from "../assets/icons/cooperar.png";
-import mejorar from "../assets/icons/mejorar.png";
-import modernizar from "../assets/icons/modernizar.png";
-import simplificar from "../assets/icons/simplificar.png";
+import cooperar from "../assets/cooperar.png";
+import mejorar from "../assets/mejorar.png";
+import modernizar from "../assets/modernizar.png";
+import simplificar from "../assets/simplificar.png";
 import fifty from "../assets/50_50.png";
 
 const logros = [
@@ -39,14 +39,14 @@ function AboutPage() {
   return (
     <div>
       <div className="p-16">
-        <h2 className="font-bold text-5xl mb-8 uppercase">Nosotros</h2>
-        <div className="flex place-content-around gap-10 mb-5">
+        <h2 className="mb-8 text-5xl font-bold uppercase">Nosotros</h2>
+        <div className="mb-5 flex place-content-around gap-10">
           <div className="basis-1/2">
             <img src={img1} />
           </div>
-          <div className="basis-1/2 w-40">
+          <div className="w-40 basis-1/2">
             <h3 className="text-6xl font-bold text-myred">MAXWELL PARTS</h3>
-            <h4 className="font-bold text-4xl text-justify">
+            <h4 className="text-justify text-4xl font-bold">
               is always looking for the best insterest of their clients.
             </h4>
             <h4 className="text-justify text-4xl">
@@ -56,27 +56,27 @@ function AboutPage() {
             </h4>
           </div>
         </div>
-        <div className="flex place-content-around gap-10 items-center">
+        <div className="flex place-content-around items-center gap-10">
           <div className="basis-1/4 text-4xl font-bold">
             <h3>Actual CEO: </h3>
-            <h4 className="text-myred mt-3">Mona Asshak</h4>
+            <h4 className="mt-3 text-myred">Mona Asshak</h4>
           </div>
-          <div className="basis-3/4 w-full ml-32">
+          <div className="ml-32 w-full basis-3/4">
             <img src={img2} className="w-full" />
           </div>
         </div>
-        <div className="text-4xl font-bold text-end mt-10 mb-10">
+        <div className="mb-10 mt-10 text-end text-4xl font-bold">
           <h3>Main business scope and industry: </h3>
           <div className="flex">
             <div className="basis-1/2"></div>
-            <h4 className="text-myred mt-3 basis-1/2">
+            <h4 className="mt-3 basis-1/2 text-myred">
               Business of air-conditioning and refrigeration parts.
             </h4>
           </div>
         </div>
         <div>
-          <h2 className="font-bold text-5xl uppercase">Objetivo</h2>
-          <p className="font-bold text-4xl mt-5 px-20 text-justify mb-10">
+          <h2 className="text-5xl font-bold uppercase">Objetivo</h2>
+          <p className="mb-10 mt-5 px-20 text-justify text-4xl font-bold">
             La satisfacción de los clientes es la clave de nuestra organización,
             nos esforzamos por servir de manera oportuna y evaluando
             constantemente nuestros servicios para satisfacer las demandas de
@@ -84,7 +84,7 @@ function AboutPage() {
           </p>
         </div>
         <div>
-          <h2 className="font-bold text-5xl text-myred uppercase">
+          <h2 className="text-5xl font-bold uppercase text-myred">
             Equity structure
           </h2>
           <div className="flex place-content-center">
@@ -92,20 +92,20 @@ function AboutPage() {
           </div>
         </div>
         <div>
-          <h2 className="font-bold text-5xl uppercase">Logros</h2>
-          <div className="flex flex-wrap place-content-around gap-5 mt-8">
+          <h2 className="text-5xl font-bold uppercase">Logros</h2>
+          <div className="mt-8 flex flex-wrap place-content-around gap-5">
             {logros.map((e) => (
               <div key={e.titulo} className="basis-1/4">
                 <div className="flex place-content-around">
                   <img src={e.imagen} className="size-28" />
                 </div>
                 <div className="flex place-content-around">
-                  <h3 className="font-bold text-2xl text-myred uppercase">
+                  <h3 className="text-2xl font-bold uppercase text-myred">
                     {e.titulo}
                   </h3>
                 </div>
                 <div className="flex place-content-around leading-4">
-                  <p className="text-center font-bold text-md leading-4">
+                  <p className="text-md text-center font-bold leading-4">
                     {e.texto}
                   </p>
                 </div>
@@ -116,7 +116,7 @@ function AboutPage() {
         <div className="flex place-content-around text-center">
           <Link
             to="/contacto"
-            className="bg-myred m-4 p-4 items-center text-white font-bold text-2xl"
+            className="m-4 items-center bg-myred p-4 text-2xl font-bold text-white"
           >
             Contactanos
           </Link>

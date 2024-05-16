@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import buscar from "../assets/buscar.png";
-import algo from "../assets/productos/IMG_0629.png";
+import algo from "../assets/IMG_0629.png";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -127,7 +127,7 @@ function ProductsPage(props) {
                 <div className="flex h-full w-full flex-col">
                   <div>
                     <img
-                      src={`/src/images/${url}`}
+                      src={`/src/assets/${url}`}
                       className="max-h-[350px] min-h-[350px] w-full md:max-h-[230px] md:min-h-[230px]"
                     />
                   </div>

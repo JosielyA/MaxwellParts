@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo-maxwell_100px.png";
-import tiktok from "../assets/icons/tik-tok.png";
+import tiktok from "../assets/tik-tok.png";
 import insta from "../assets/instagram.png";
 import correo from "../assets/correo-electronico.png";
 import whats from "../assets/whatsapp.png";

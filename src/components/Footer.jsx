@@ -1,5 +1,5 @@
 import React from "react";
-import oso from "../assets/icons_color/oso-solo.png";
+import oso from "../assets/oso-solo-color.png";
 import face from "../assets/facebook.png";
 import insta from "../assets/instagram.png";
 import correo from "../assets/correo-electronico.png";
@@ -7,9 +7,9 @@ import whats from "../assets/whatsapp.png";
 
 function Footer() {
   return (
-    <div className="bg-mygray text-white w-full h-52 flex place-content-center items-center p-10">
+    <div className="flex h-52 w-full place-content-center items-center bg-mygray p-10 text-white">
       <div>
-        <div className="flex place-content-around mb-2">
+        <div className="mb-2 flex place-content-around">
           <img src={oso} className="w-60 md:w-48" />
         </div>
         <div className="flex space-x-2">
@@ -28,7 +28,7 @@ function Footer() {
         </div>
       </div>
       <div className="p-10">
-        <h3 className="xl:text-3xl md:text-2xl text-xl">
+        <h3 className="text-xl md:text-2xl xl:text-3xl">
           © 2024 Maxwell Parts. Todos los derechos reservados.
         </h3>
       </div>
