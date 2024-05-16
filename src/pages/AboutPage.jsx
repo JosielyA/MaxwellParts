@@ -50,46 +50,31 @@ function AboutPage() {
               is always looking for the best insterest of their clients.
             </h4>
             <h4 className="text-justify text-4xl">
-              Thats why our two heads of corporation: Mona Asshak and Mansour
-              Eld Almeilla are always on the hunt to becoming leaders on the
-              airconditioning and refrigeration parts buisiness.
+              Thats why our heads of corporation are always on the hunt to
+              becoming leaders on the airconditioning and refrigeration parts
+              buisiness.
             </h4>
           </div>
         </div>
-        <div className="flex place-content-around items-center gap-10">
-          <div className="basis-1/4 text-4xl font-bold">
-            <h3>Actual CEO: </h3>
-            <h4 className="mt-3 text-myred">Mona Asshak</h4>
-          </div>
-          <div className="ml-32 w-full basis-3/4">
+        <div className="flex place-content-center items-center">
+          <div className="w-11/12 sm:w-9/12">
             <img src={img2} className="w-full" />
           </div>
         </div>
-        <div className="mb-10 mt-10 text-end text-4xl font-bold">
+        <div className="mb-10 mt-4 text-center text-4xl font-bold">
           <h3>Main business scope and industry: </h3>
-          <div className="flex">
-            <div className="basis-1/2"></div>
-            <h4 className="mt-3 basis-1/2 text-myred">
-              Business of air-conditioning and refrigeration parts.
-            </h4>
-          </div>
+          <h4 className="mt-3 basis-1/2 text-myred">
+            Business of air-conditioning and refrigeration parts.
+          </h4>
         </div>
         <div>
           <h2 className="text-5xl font-bold uppercase">Objetivo</h2>
-          <p className="mb-10 mt-5 px-20 text-justify text-4xl font-bold">
+          <p className="mb-10 mt-5 px-20 text-justify text-4xl font-normal">
             La satisfacción de los clientes es la clave de nuestra organización,
             nos esforzamos por servir de manera oportuna y evaluando
             constantemente nuestros servicios para satisfacer las demandas de
             nuestros clientes.
           </p>
-        </div>
-        <div>
-          <h2 className="text-5xl font-bold uppercase text-myred">
-            Equity structure
-          </h2>
-          <div className="flex place-content-center">
-            <img src={fifty} className="w-[1200px]" />
-          </div>
         </div>
         <div>
           <h2 className="text-5xl font-bold uppercase">Logros</h2>
@@ -105,7 +90,7 @@ function AboutPage() {
                   </h3>
                 </div>
                 <div className="flex place-content-around leading-4">
-                  <p className="text-md text-center font-bold leading-4">
+                  <p className="text-md text-center font-light leading-4">
                     {e.texto}
                   </p>
                 </div>
