@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 import buscar from "../assets/buscar.png";
 import algo from "../assets/IMG_0629.png";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { productsName } from "../data/data";
 import axios from "axios";
@@ -69,6 +69,11 @@ function ProductsPage(props) {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState(params.search || "");
 
+  const [productsPerPage, setProductsPerPage] = useState(12);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const productsRef = useRef(null);
+
   let filtrado = products.sort((a, b) => {
     const nameA = a.name.toUpperCase(); // ignore upper and lowercase
     const nameB = b.name.toUpperCase(); // ignore upper and lowercase
@@ -82,6 +87,27 @@ function ProductsPage(props) {
     // names must be equal
     return 0;
   });
+
+  const productsQuantity = filtrado.length;
+  const lastIndex = currentPage * productsPerPage;
+  const firstIndex = lastIndex - productsPerPage;
+  const pagesQuantity = Math.ceil(productsQuantity / productsPerPage);
+
+  const pageNumbers = [];
+  for (let i = 1; i <= pagesQuantity; i++) {
+    pageNumbers.push(i);
+  }
+
+  const onSpecificPage = (n) => {
+    setCurrentPage(n);
+    scrollToSection(productsRef);
+  };
+  const scrollToSection = (elementRef) => {
+    elementRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   const searcher = (e) => {
     setSearch(e.target.value);
@@ -128,42 +154,57 @@ function ProductsPage(props) {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap place-content-center">
+        <div ref={productsRef} className="flex flex-wrap place-content-center">
           {filtrado.length > 0 ? (
-            filtrado.map(({ name, link }, f) => (
-              <div
-                key={f}
-                className="m-7 h-[500px] w-[400px] items-end bg-white text-black md:h-[380px] md:w-[250px]"
-              >
-                <div className="flex h-full w-full flex-col">
-                  <div>
-                    <img
-                      src={link}
-                      className="max-h-[350px] min-h-[350px] w-full md:max-h-[230px] md:min-h-[230px]"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h2 className="text-lg font-bold uppercase leading-5">
-                      {name}
-                    </h2>
-                  </div>
-                  <div className="flex h-full place-content-end items-end  p-4 ">
-                    <a
-                      href={`https://wa.me/584129697361?text=${encodeURIComponent(`Hola! Quisiera información del producto '${name}' que esta publicado en su página web.`)}`}
-                      target="_blank"
-                      className="text-sm font-bold text-myred"
-                    >
-                      Pregunta por este producto.
-                    </a>
+            filtrado
+              .map(({ name, link }, f) => (
+                <div
+                  key={f}
+                  className="m-7 h-[500px] w-[400px] items-end bg-white text-black md:h-[380px] md:w-[250px]"
+                >
+                  <div className="flex h-full w-full flex-col">
+                    <div>
+                      <img
+                        src={link}
+                        className="max-h-[350px] min-h-[350px] w-full md:max-h-[230px] md:min-h-[230px]"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h2 className="text-lg font-bold uppercase leading-5">
+                        {name}
+                      </h2>
+                    </div>
+                    <div className="flex h-full place-content-end items-end  p-4 ">
+                      <a
+                        href={`https://wa.me/584129697361?text=${encodeURIComponent(`Hola! Quisiera información del producto '${name}' que esta publicado en su página web.`)}`}
+                        target="_blank"
+                        className="text-sm font-bold text-myred"
+                      >
+                        Pregunta por este producto.
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))
+              ))
+              .slice(firstIndex, lastIndex)
           ) : (
             <div className="m-10 text-3xl font-bold">
               No se encontró producto.
             </div>
           )}
+        </div>
+        <div className={`${filtrado.length > productsPerPage ? "" : "hidden"}`}>
+          <div className="flex place-content-center items-center gap-3 p-5">
+            {pageNumbers.map((nopage) => (
+              <button
+                key={nopage}
+                onClick={() => onSpecificPage(nopage)}
+                className={`${currentPage == nopage ? "bg-white text-myred outline outline-1 outline-myred" : "bg-myred  text-white"} size-10 text-2xl`}
+              >
+                {nopage}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="flex place-content-center">
           <h2 className="text-6xl font-bold uppercase">
