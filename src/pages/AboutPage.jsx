@@ -6,7 +6,6 @@ import cooperar from "../assets/cooperar.png";
 import mejorar from "../assets/mejorar.png";
 import modernizar from "../assets/modernizar.png";
 import simplificar from "../assets/simplificar.png";
-import fifty from "../assets/50_50.png";
 
 const logros = [
   {

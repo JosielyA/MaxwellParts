@@ -97,7 +97,9 @@ function ProductsPage(props) {
     try {
       const { data } = await axios.get("http://localhost:3000/api/products");
       setProducts(data);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
