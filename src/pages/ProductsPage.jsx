@@ -95,7 +95,9 @@ function ProductsPage(props) {
 
   const getProducts = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3000/api/products");
+      const { data } = await axios.get(
+        "https://get-products-maxwell-production.up.railway.app/api/products",
+      );
       setProducts(data);
     } catch (error) {
       console.log(error);
