@@ -173,7 +173,7 @@ function ProductsPage(props) {
         ) : (
           <div
             ref={productsRef}
-            className="mt-5 flex flex-wrap place-content-center gap-4 px-3"
+            className={`${filtrado.length <= productsPerPage && "mb-5"} mt-5 flex flex-wrap place-content-center gap-4 px-3`}
           >
             {filtrado.length > 0 ? (
               filtrado
