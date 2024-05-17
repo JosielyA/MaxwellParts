@@ -37,30 +37,30 @@ const logros = [
 function AboutPage() {
   return (
     <div>
-      <div className="p-16">
+      <div className="p-5 sm:p-16">
         <h2 className="mb-8 text-5xl font-bold uppercase">Nosotros</h2>
-        <div className="mb-5 flex place-content-around gap-10">
-          <div className="basis-1/2">
+        <div className="mb-5 flex flex-col place-content-around gap-10 lg:flex-row">
+          <div className="lg:basis-1/2">
             <img src={img1} />
           </div>
-          <div className="w-40 basis-1/2">
-            <h3 className="text-6xl font-bold text-myred">MAXWELL PARTS</h3>
-            <h4 className="text-justify text-4xl font-bold">
+          <div className="lg:w-40 lg:basis-1/2">
+            <h3 className="text-5xl font-bold text-myred">MAXWELL PARTS</h3>
+            <h4 className="text-justify text-3xl font-bold">
               is always looking for the best insterest of their clients.
             </h4>
-            <h4 className="text-justify text-4xl">
+            <h4 className="text-justify text-3xl">
               Thats why our heads of corporation are always on the hunt to
               becoming leaders on the airconditioning and refrigeration parts
               buisiness.
             </h4>
           </div>
         </div>
-        <div className="flex place-content-center items-center">
-          <div className="w-11/12 sm:w-9/12">
+        <div className="flex place-content-center items-center lg:place-content-end">
+          <div className="lg:w-9/12">
             <img src={img2} className="w-full" />
           </div>
         </div>
-        <div className="mb-10 mt-4 text-center text-4xl font-bold">
+        <div className="mb-10 mt-4 text-center text-3xl font-bold lg:text-end">
           <h3>Main business scope and industry: </h3>
           <h4 className="mt-3 basis-1/2 text-myred">
             Business of air-conditioning and refrigeration parts.
@@ -68,7 +68,7 @@ function AboutPage() {
         </div>
         <div>
           <h2 className="text-5xl font-bold uppercase">Objetivo</h2>
-          <p className="mb-10 mt-5 px-20 text-justify text-4xl font-normal">
+          <p className="mb-10 mt-5 px-4 text-justify text-4xl font-normal">
             La satisfacción de los clientes es la clave de nuestra organización,
             nos esforzamos por servir de manera oportuna y evaluando
             constantemente nuestros servicios para satisfacer las demandas de
@@ -79,16 +79,16 @@ function AboutPage() {
           <h2 className="text-5xl font-bold uppercase">Logros</h2>
           <div className="mt-8 flex flex-wrap place-content-around gap-5">
             {logros.map((e) => (
-              <div key={e.titulo} className="basis-1/4">
+              <div key={e.titulo} className="sm:basis-2/5 md:basis-1/4">
                 <div className="flex place-content-around">
                   <img src={e.imagen} className="size-28" />
                 </div>
                 <div className="flex place-content-around">
-                  <h3 className="text-2xl font-bold uppercase text-myred">
+                  <h3 className="text-center text-2xl font-bold uppercase text-myred">
                     {e.titulo}
                   </h3>
                 </div>
-                <div className="flex place-content-around leading-4">
+                <div className="flex place-content-around px-8 leading-4 sm:px-0">
                   <p className="text-md text-center font-light leading-4">
                     {e.texto}
                   </p>

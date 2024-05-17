@@ -34,15 +34,15 @@ const ofrecemos = [
 function IndexPage() {
   return (
     <>
-      <div className="z-20 justify-between md:flex-wrap lg:flex">
+      <div className="z-20 flex flex-col-reverse justify-between md:flex-wrap lg:flex-row">
         <div>
-          <div className="z-30 flex h-[600px] items-center p-16 text-black lg:absolute lg:ml-9 lg:h-4/5 lg:w-6/12">
-            <div className="mx-10">
-              <h1 className="mb-2 text-6xl font-bold uppercase">
+          <div className="z-30 flex h-[400px] items-center p-8 text-black md:h-[600px] md:p-16 lg:absolute lg:ml-9 lg:h-4/5 lg:w-6/12">
+            <div className="md:mx-10">
+              <h1 className="mb-2 text-3xl font-bold uppercase md:text-6xl">
                 Calidad
                 <span className="text-myred"> Garantizada.</span>
               </h1>
-              <h2 className="mb-4 text-xl font-light leading-6">
+              <h2 className="mb-8 text-xl font-light leading-6 md:text-2xl">
                 Garantizamos la excelencia en cada artículo, desde la selección
                 de materiales hasta el proceso de fabricación. Revisa nuestro...
               </h2>
@@ -74,12 +74,12 @@ function IndexPage() {
           className="absolute h-[500px] w-full lg:z-50 lg:-mt-10 lg:ml-20 lg:h-[700px] lg:w-5/12"
         />
         <div className="absolute z-30 flex h-[700px] w-full place-content-center items-center text-black">
-          <div className="inset-y-0 mb-56 w-full flex-col place-content-center items-center bg-gray-700/50 p-10 lg:absolute lg:right-12 lg:mx-10 lg:mb-0 lg:mt-20 lg:w-5/12 lg:bg-transparent lg:p-0">
-            <h1 className="mb-2 text-xl font-bold uppercase md:text-3xl">
+          <div className="inset-y-0 mb-56 w-full flex-col place-content-center items-center bg-white/30 p-10 backdrop-blur-sm  lg:absolute lg:right-0 lg:mx-10 lg:mb-0 lg:w-5/12 lg:bg-transparent lg:p-0">
+            <h1 className="mb-2 text-3xl font-bold uppercase md:text-6xl">
               Servicio Al Cliente
               <span className="text-myred"> Excepcional.</span>
             </h1>
-            <h2 className="mb-4 text-lg font-light md:text-2xl lg:mb-2">
+            <h2 className="mb-6 text-xl font-light leading-6 md:text-2xl lg:mb-2">
               Nuestra empresa se compromete a brindar un servicio al cliente
               excepcional, atento a sus necesidades y expectativas. Si tienes
               alguna sugerencia o duda...
@@ -95,21 +95,23 @@ function IndexPage() {
       </div>
 
       <div>
-        <div className="mb-7 text-center font-bold uppercase">
-          <h2 className="mb-10 text-5xl">
+        <div className="mb-4 text-center font-bold uppercase">
+          <h2 className="mb-10 text-4xl md:text-5xl">
             Lo que <span className="text-myred">ofrecemos</span>
           </h2>
-          <div className="flex-grap place-content-around lg:flex">
+          <div className="flex-grap place-content-around space-y-8 p-5 md:flex md:flex-wrap md:space-y-0 md:p-0">
             {ofrecemos.map((e, f) => (
-              <div key={f} className="my-8 p-5 lg:my-0 lg:p-0">
+              <div key={f} className="md:w-[50%] lg:w-[30%]">
                 <div className="flex place-content-around">
-                  <img src={e.imagen} className="size-32" />
+                  <img src={e.imagen} className="size-20" />
                 </div>
                 <div className="flex place-content-around">
                   <h3 className="mb-1 text-2xl font-bold">{e.titulo}</h3>
                 </div>
-                <div className="flex place-content-around leading-4 lg:w-[400px]">
-                  <p className="text-sm font-light normal-case">{e.texto}</p>
+                <div className="flex place-content-around leading-4">
+                  <p className="w-[400px] text-sm font-light normal-case md:w-10/12">
+                    {e.texto}
+                  </p>
                 </div>
               </div>
             ))}

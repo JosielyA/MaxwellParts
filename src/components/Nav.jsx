@@ -6,11 +6,13 @@ import correo from "../assets/correo-electronico.png";
 import whats from "../assets/whatsapp.png";
 import buscar from "../assets/buscar.png";
 import { useRef, useState } from "react";
-import { CloudSnow } from "react-feather";
+import menu from "../assets/menu.png";
 
 function Nav() {
   const navigate = useNavigate();
   const [busqueda, setBusqueda] = useState("");
+  const [isOpen, setIsOpen] = useState(true);
+
   let usingLocation = useLocation();
   let location = usingLocation.pathname;
 
@@ -21,6 +23,10 @@ function Nav() {
   const goToSearch = (e) => {
     e.preventDefault();
     navigate(`/catalogo/${busqueda}`);
+  };
+
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
   };
 
   const pages = [
@@ -42,12 +48,16 @@ function Nav() {
     },
   ];
   return (
-    <>
-      <Link to="/">
-        <img src={logo} alt="Logo" className="absolute ml-5 mt-2 xl:size-24" />
+    <div className="overflow-hidden">
+      <Link to="/" className="">
+        <img
+          src={logo}
+          alt="Logo"
+          className="absolute z-50 ml-5 mt-2 xl:size-24"
+        />
       </Link>
       <div className="flex h-14 items-center justify-end bg-black text-white">
-        <div className="flex items-center space-x-2">
+        <div className="hidden items-center space-x-2 sm:flex">
           <div className="relative">
             <form onSubmit={goToSearch}>
               <input
@@ -83,21 +93,39 @@ function Nav() {
           </a>
         </div>
       </div>
-      <div className="flex h-14  items-center justify-end bg-myred font-bold  text-white ">
-        <div className="mr-10 flex space-x-10">
-          {pages.map(({ nombre, route }, i) => (
-            <div key={i} className="flex place-content-center items-center">
-              <Link to={route}>{nombre}</Link>
+
+      <div className="relative flex h-14 items-center justify-end  bg-myred font-bold text-white sm:static ">
+        <nav>
+          <button onClick={toggleMenu} className="sm:hidden">
+            <img src={menu} alt="menu icon" className="mr-5 size-8" />
+          </button>
+
+          <div
+            className={`${isOpen ? "" : "translate-x-full sm:translate-x-0"} absolute left-0 right-0 z-50 mt-2 h-screen transform space-y-4 bg-black p-4 transition duration-300 sm:static sm:left-auto sm:right-0 sm:mr-5 sm:mt-0 sm:flex sm:h-full sm:space-x-7 sm:space-y-0 sm:bg-transparent sm:p-0 lg:space-x-12`}
+          >
+            {pages.map(({ nombre, route }, i) => (
               <div
-                className={`${location == route ? "" : "opacity-0"} absolute mt-7 h-[5px] w-[50px] 
-        place-self-center rounded-full bg-white transition-all duration-500`}
-              ></div>
-            </div>
-          ))}
-        </div>
+                key={i}
+                className={`flex place-content-center items-center py-2 sm:py-0 
+                ${location == route && "bg-myred sm:bg-transparent"}`}
+              >
+                <Link to={route} onClick={toggleMenu}>
+                  {nombre}
+                </Link>
+                <div
+                  className={`${location == route ? "" : "opacity-0"} 
+                  ${location == "/" && "w-[40px]"}
+                  ${(location == "/catalogo" || location == "/nosotros") && "w-[75px]"} 
+                  ${location == "/contacto" && "w-[70px]"}
+                  mt-7 hidden h-[5px]  place-self-center rounded-full bg-white transition-all duration-500 sm:absolute sm:flex`}
+                ></div>
+              </div>
+            ))}
+          </div>
+        </nav>
       </div>
       <Outlet />
-    </>
+    </div>
   );
 }
 

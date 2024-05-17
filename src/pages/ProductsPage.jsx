@@ -69,7 +69,7 @@ function ProductsPage(props) {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState(params.search || "");
 
-  const [productsPerPage, setProductsPerPage] = useState(12);
+  const [productsPerPage, setProductsPerPage] = useState(8);
   const [currentPage, setCurrentPage] = useState(1);
 
   const productsRef = useRef(null);
@@ -87,6 +87,15 @@ function ProductsPage(props) {
     // names must be equal
     return 0;
   });
+  const searcher = (e) => {
+    setSearch(e.target.value);
+  };
+
+  if (search) {
+    filtrado = products.filter((p) =>
+      p.name.toLowerCase().includes(search.toLowerCase()),
+    );
+  }
 
   const productsQuantity = filtrado.length;
   const lastIndex = currentPage * productsPerPage;
@@ -109,16 +118,6 @@ function ProductsPage(props) {
     });
   };
 
-  const searcher = (e) => {
-    setSearch(e.target.value);
-  };
-
-  if (search) {
-    filtrado = products.filter((p) =>
-      p.name.toLowerCase().includes(search.toLowerCase()),
-    );
-  }
-
   const getProducts = async () => {
     try {
       const { data } = await axios.get(
@@ -136,15 +135,17 @@ function ProductsPage(props) {
 
   return (
     <div className="bg-gray-200">
-      <div className="p-16">
-        <h2 className="mb-8 text-5xl font-bold uppercase">Catalogo</h2>
-        <div className="flex flex-wrap place-content-end">
-          <div className="flex place-content-end items-center">
+      <div className="pt-10">
+        <h2 className="mb-8 px-10 text-center text-5xl font-bold uppercase sm:text-start">
+          Catalogo
+        </h2>
+        <div className="flex flex-wrap place-content-center md:place-content-end">
+          <div className="flex w-10/12 place-content-end items-center sm:mr-14 sm:w-5/12">
             <input
               onChange={searcher}
               value={search}
               type="text"
-              className=" h-14 rounded-sm border-white bg-white p-2 text-xl text-black lg:w-[500px]"
+              className="w-full rounded-sm border-white bg-white px-2 py-4 text-xl text-black "
               placeholder="Buscar una pieza..."
             />
             <div className="absolute mr-2 mt-1 flex items-center">
@@ -154,19 +155,22 @@ function ProductsPage(props) {
             </div>
           </div>
         </div>
-        <div ref={productsRef} className="flex flex-wrap place-content-center">
+        <div
+          ref={productsRef}
+          className="mt-5 flex flex-wrap place-content-center gap-4 px-3"
+        >
           {filtrado.length > 0 ? (
             filtrado
               .map(({ name, link }, f) => (
                 <div
                   key={f}
-                  className="m-7 h-[500px] w-[400px] items-end bg-white text-black md:h-[380px] md:w-[250px]"
+                  className="h-[400px] w-[250px] items-end bg-white text-black md:h-[360px] md:w-[240px]"
                 >
                   <div className="flex h-full w-full flex-col">
                     <div>
                       <img
                         src={link}
-                        className="max-h-[350px] min-h-[350px] w-full md:max-h-[230px] md:min-h-[230px]"
+                        className="max-h-[280px] min-h-[255px] w-full md:max-h-[240px] md:min-h-[180px]"
                       />
                     </div>
                     <div className="p-4">
@@ -194,7 +198,7 @@ function ProductsPage(props) {
           )}
         </div>
         <div className={`${filtrado.length > productsPerPage ? "" : "hidden"}`}>
-          <div className="flex place-content-center items-center gap-3 p-5">
+          <div className="flex flex-wrap place-content-center items-center gap-3 p-5">
             {pageNumbers.map((nopage) => (
               <button
                 key={nopage}
@@ -207,7 +211,7 @@ function ProductsPage(props) {
           </div>
         </div>
         <div className="flex place-content-center">
-          <h2 className="text-6xl font-bold uppercase">
+          <h2 className="text-center text-4xl font-bold uppercase sm:px-10 sm:text-5xl">
             ¿No has encontrado lo que buscabas?
           </h2>
         </div>
