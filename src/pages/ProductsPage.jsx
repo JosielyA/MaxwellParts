@@ -88,6 +88,7 @@ function ProductsPage(props) {
     return 0;
   });
   const searcher = (e) => {
+    setCurrentPage(() => 1);
     setSearch(e.target.value);
   };
 
@@ -211,23 +212,21 @@ function ProductsPage(props) {
                 No se encontró producto.
               </div>
             )}
-            <div
-              className={`${filtrado.length > productsPerPage ? "" : "hidden"}`}
-            >
-              <div className="flex flex-wrap place-content-center items-center gap-3 p-5">
-                {pageNumbers.map((nopage) => (
-                  <button
-                    key={nopage}
-                    onClick={() => onSpecificPage(nopage)}
-                    className={`${currentPage == nopage ? "bg-white text-myred outline outline-1 outline-myred" : "bg-myred  text-white"} size-10 text-2xl`}
-                  >
-                    {nopage}
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
         )}
+        <div className={`${filtrado.length > productsPerPage ? "" : "hidden"}`}>
+          <div className="flex flex-wrap place-content-center items-center gap-3 p-5">
+            {pageNumbers.map((nopage) => (
+              <button
+                key={nopage}
+                onClick={() => onSpecificPage(nopage)}
+                className={`${currentPage == nopage ? "bg-white text-myred outline outline-1 outline-myred" : "bg-myred  text-white"} size-10 text-2xl`}
+              >
+                {nopage}
+              </button>
+            ))}
+          </div>
+        </div>
 
         <div className="flex place-content-center">
           <h2 className="text-center text-4xl font-bold uppercase sm:px-10 sm:text-5xl">
