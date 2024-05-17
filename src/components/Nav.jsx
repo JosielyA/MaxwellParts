@@ -28,6 +28,9 @@ function Nav() {
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
+  const closeMenu = () => {
+    setIsOpen(() => false);
+  };
 
   const pages = [
     {
@@ -49,14 +52,17 @@ function Nav() {
   ];
   return (
     <div className="overflow-hidden">
-      <Link to="/" className="">
+      <Link to="/" onClick={closeMenu}>
         <img
           src={logo}
           alt="Logo"
           className="absolute z-50 ml-5 mt-2 xl:size-24"
         />
       </Link>
-      <div className="flex h-14 items-center justify-end bg-black text-white">
+      <div
+        onClick={closeMenu}
+        className="flex h-14 items-center justify-end bg-black text-white"
+      >
         <div className="hidden items-center space-x-2 sm:flex">
           <div className="relative">
             <form onSubmit={goToSearch}>
@@ -109,7 +115,7 @@ function Nav() {
                 className={`flex place-content-center items-center py-2 sm:py-0 
                 ${location == route && "bg-myred sm:bg-transparent"}`}
               >
-                <Link to={route} onClick={toggleMenu}>
+                <Link to={route} onClick={closeMenu}>
                   {nombre}
                 </Link>
                 <div
