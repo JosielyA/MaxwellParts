@@ -11,7 +11,7 @@ import menu from "../assets/menu.png";
 function Nav() {
   const navigate = useNavigate();
   const [busqueda, setBusqueda] = useState("");
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   let usingLocation = useLocation();
   let location = usingLocation.pathname;
