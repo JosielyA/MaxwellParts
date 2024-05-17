@@ -1,10 +1,9 @@
 import Footer from "../components/Footer";
 import buscar from "../assets/buscar.png";
 import algo from "../assets/IMG_0629.png";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { productsName } from "../data/data";
+import { Link, useParams } from "react-router-dom";
+
 import axios from "axios";
 
 const productos = [
@@ -66,6 +65,7 @@ const productos = [
 
 function ProductsPage(props) {
   const params = useParams();
+  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState(params.search || "");
 
@@ -119,13 +119,16 @@ function ProductsPage(props) {
   };
 
   const getProducts = async () => {
+    setLoading(() => true);
     try {
       const { data } = await axios.get(
         "https://get-products-maxwell-production.up.railway.app/api/products",
       );
       setProducts(data);
+      setLoading(() => false);
     } catch (error) {
       console.log(error);
+      setLoading(() => false);
     }
   };
 
@@ -155,61 +158,77 @@ function ProductsPage(props) {
             </div>
           </div>
         </div>
-        <div
-          ref={productsRef}
-          className="mt-5 flex flex-wrap place-content-center gap-4 px-3"
-        >
-          {filtrado.length > 0 ? (
-            filtrado
-              .map(({ name, link }, f) => (
-                <div
-                  key={f}
-                  className="h-[400px] w-[250px] items-end bg-white text-black md:h-[360px] md:w-[240px]"
-                >
-                  <div className="flex h-full w-full flex-col">
-                    <div>
-                      <img
-                        src={link}
-                        className="max-h-[280px] min-h-[255px] w-full md:max-h-[240px] md:min-h-[180px]"
-                      />
-                    </div>
-                    <div className="p-4">
-                      <h2 className="text-lg font-bold uppercase leading-5">
-                        {name}
-                      </h2>
-                    </div>
-                    <div className="flex h-full place-content-end items-end  p-4 ">
-                      <a
-                        href={`https://wa.me/584129697361?text=${encodeURIComponent(`Hola! Quisiera información del producto '${name}' que esta publicado en su página web.`)}`}
-                        target="_blank"
-                        className="text-sm font-bold text-myred"
-                      >
-                        Pregunta por este producto.
-                      </a>
+        {loading ? (
+          <div className="flex h-36 place-content-center items-center">
+            <div
+              className="inline-block h-20 w-20 animate-spin rounded-full border-4 border-solid border-current border-myred border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+              role="status"
+            >
+              <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                Loading...
+              </span>
+            </div>
+          </div>
+        ) : (
+          <div
+            ref={productsRef}
+            className="mt-5 flex flex-wrap place-content-center gap-4 px-3"
+          >
+            {filtrado.length > 0 ? (
+              filtrado
+                .map(({ name, link }, f) => (
+                  <div
+                    key={f}
+                    className="h-[400px] w-[250px] items-end bg-white text-black md:h-[360px] md:w-[240px]"
+                  >
+                    <div className="flex h-full w-full flex-col">
+                      <div>
+                        <img
+                          src={link}
+                          className="max-h-[280px] min-h-[255px] w-full md:max-h-[240px] md:min-h-[180px]"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h2 className="text-lg font-bold uppercase leading-5">
+                          {name}
+                        </h2>
+                      </div>
+                      <div className="flex h-full place-content-end items-end  p-4 ">
+                        <a
+                          href={`https://wa.me/584129697361?text=${encodeURIComponent(`Hola! Quisiera información del producto '${name}' que esta publicado en su página web.`)}`}
+                          target="_blank"
+                          className="text-sm font-bold text-myred"
+                        >
+                          Pregunta por este producto.
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))
-              .slice(firstIndex, lastIndex)
-          ) : (
-            <div className="m-10 text-3xl font-bold">
-              No se encontró producto.
+                ))
+                .slice(firstIndex, lastIndex)
+            ) : (
+              <div className="m-10 text-3xl font-bold">
+                No se encontró producto.
+              </div>
+            )}
+            <div
+              className={`${filtrado.length > productsPerPage ? "" : "hidden"}`}
+            >
+              <div className="flex flex-wrap place-content-center items-center gap-3 p-5">
+                {pageNumbers.map((nopage) => (
+                  <button
+                    key={nopage}
+                    onClick={() => onSpecificPage(nopage)}
+                    className={`${currentPage == nopage ? "bg-white text-myred outline outline-1 outline-myred" : "bg-myred  text-white"} size-10 text-2xl`}
+                  >
+                    {nopage}
+                  </button>
+                ))}
+              </div>
             </div>
-          )}
-        </div>
-        <div className={`${filtrado.length > productsPerPage ? "" : "hidden"}`}>
-          <div className="flex flex-wrap place-content-center items-center gap-3 p-5">
-            {pageNumbers.map((nopage) => (
-              <button
-                key={nopage}
-                onClick={() => onSpecificPage(nopage)}
-                className={`${currentPage == nopage ? "bg-white text-myred outline outline-1 outline-myred" : "bg-myred  text-white"} size-10 text-2xl`}
-              >
-                {nopage}
-              </button>
-            ))}
           </div>
-        </div>
+        )}
+
         <div className="flex place-content-center">
           <h2 className="text-center text-4xl font-bold uppercase sm:px-10 sm:text-5xl">
             ¿No has encontrado lo que buscabas?
