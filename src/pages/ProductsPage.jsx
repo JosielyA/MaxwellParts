@@ -180,7 +180,7 @@ function ProductsPage(props) {
                 .map(({ name, link }, f) => (
                   <div
                     key={f}
-                    className="h-[400px] w-[250px] items-end bg-white text-black md:h-[360px] md:w-[240px]"
+                    className="h-[400px] w-[250px] items-end bg-white text-black md:h-[360px] md:w-[240px] lg:h-[400px] lg:w-[20%]"
                   >
                     <div className="flex h-full w-full flex-col">
                       <div>
