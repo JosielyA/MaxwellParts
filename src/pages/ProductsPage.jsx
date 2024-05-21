@@ -186,7 +186,7 @@ function ProductsPage(props) {
                       <div>
                         <img
                           src={link}
-                          className="max-h-[280px] min-h-[255px] w-full md:max-h-[240px] md:min-h-[180px]"
+                          className="max-h-[280px] min-h-[255px] w-full md:max-h-[240px] md:min-h-[180px] lg:max-h-[17rem]"
                         />
                       </div>
                       <div className="p-4">
