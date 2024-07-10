@@ -1,8 +1,13 @@
 import Carousel from "../components/Carousel";
 import { Link } from "react-router-dom";
-import slider1 from "../assets/IMG_0629.png";
-import slider2 from "../assets/IMG_0652.png";
-import slider3 from "../assets/IMG_0689.png";
+import slider1 from "../assets/3 AMPERIMETRO DIGITAL GRANDE MAXWELL.png";
+import slider2 from "../assets/15 CAPACITOR ACEITE MAXWELL.png";
+import slider3 from "../assets/36 FILTRO SECADOR.png";
+import slider4 from "..//assets/43 MEDIDOR CAPILAR 11.35.36 a. m..png";
+import slider5 from "..//assets/51 PROTECTOR DE VOLT 220V.png";
+import slider6 from "..//assets/58 RELAY FAN 364.png";
+import slider7 from "..//assets/62 RELOJ DE NEVERA.png";
+import slider8 from "..//assets/66 ROLINERA 6000.png";
 import img2 from "../assets/Call-center.png";
 import blanco from "../assets/blanco diagonal.png";
 import dialogo from "../assets/burbuja-de-dialogo.png";
@@ -10,7 +15,16 @@ import producto from "../assets/producto.png";
 import entrega from "../assets/servicio-de-entrega.png";
 import Footer from "../components/Footer";
 
-const slides = [slider1, slider2, slider3];
+const slides = [
+  slider1,
+  slider2,
+  slider3,
+  slider4,
+  slider5,
+  slider6,
+  slider7,
+  slider8,
+];
 const ofrecemos = [
   {
     imagen: entrega,
@@ -36,13 +50,13 @@ function IndexPage() {
     <>
       <div className="z-20 flex flex-col-reverse justify-between md:flex-wrap lg:flex-row">
         <div>
-          <div className="z-30 flex h-[400px] items-center p-8 text-black md:h-[350px] md:p-16 lg:absolute lg:ml-9 lg:h-[350px] lg:w-8/12 xl:h-[460px] 2xl:ml-20 2xl:h-[60%] 2xl:w-6/12">
+          <div className="z-30 flex h-[400px] items-center p-8 text-black md:h-[350px] md:p-16 lg:absolute lg:ml-9 lg:h-[350px] lg:w-7/12 xl:h-[460px] 2xl:ml-20 2xl:h-[60%] 2xl:w-6/12">
             <div className="md:mx-10">
               <h1 className="mb-2 text-3xl font-bold uppercase lg:text-5xl xl:text-6xl 2xl:text-7xl">
                 Calidad
                 <span className="text-myred"> Garantizada.</span>
               </h1>
-              <h2 className="mb-8 text-xl font-light leading-6 xl:text-2xl 2xl:text-3xl">
+              <h2 className="mb-4 text-xl font-light leading-6 xl:text-2xl 2xl:text-3xl">
                 Garantizamos la excelencia en cada artículo, desde la selección
                 de materiales hasta el proceso de fabricación. Revisa nuestro...
               </h2>
@@ -57,7 +71,7 @@ function IndexPage() {
 
           <img
             src={blanco}
-            className="invisible  absolute z-20 lg:visible lg:w-[83%]"
+            className="invisible  absolute z-20 lg:visible lg:w-[84%]"
           />
         </div>
         <div className="w-full lg:w-5/12">
