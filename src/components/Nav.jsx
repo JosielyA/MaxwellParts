@@ -103,7 +103,7 @@ function Nav() {
         </div>
       </div>
 
-      <div className="relative flex h-16 items-center justify-between  bg-myred font-bold text-white sm:static ">
+      <div className="relative flex h-16 items-center justify-between  bg-white font-bold text-white sm:static ">
         <img
           src={letras}
           alt=""
@@ -116,7 +116,7 @@ function Nav() {
           </button>
 
           <div
-            className={`${isOpen ? "" : "translate-x-full sm:translate-x-0"} absolute left-0 right-0 z-50 mt-2 h-screen transform space-y-4 bg-black p-4 transition duration-300 sm:static sm:left-auto sm:right-0 sm:mr-5 sm:mt-0 sm:flex sm:h-full sm:space-x-7 sm:space-y-0 sm:bg-transparent sm:p-0 lg:space-x-12`}
+            className={`${isOpen ? "" : "translate-x-full sm:translate-x-0"} absolute left-0 right-0 z-50 mt-2 transform space-y-4 bg-white p-4 text-black transition duration-300 sm:static sm:left-auto sm:right-0 sm:mr-5 sm:mt-0 sm:flex sm:h-full sm:space-x-7 sm:space-y-0 sm:bg-transparent sm:p-0 lg:space-x-12`}
           >
             {pages.map(({ nombre, route }, i) => (
               <div
@@ -132,7 +132,7 @@ function Nav() {
                   ${location == "/" && "w-[40px]"}
                   ${(location == "/catalogo" || location == "/nosotros") && "w-[75px]"} 
                   ${location == "/contacto" && "w-[70px]"}
-                  mt-7 hidden h-[5px]  place-self-center rounded-full bg-white transition-all duration-500 sm:absolute sm:flex`}
+                  mt-7 hidden h-[5px]  place-self-center rounded-full bg-black transition-all duration-500 sm:absolute sm:flex`}
                 ></div>
               </div>
             ))}

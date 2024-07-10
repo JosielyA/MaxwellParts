@@ -138,7 +138,7 @@ function ProductsPage(props) {
   }, []);
 
   return (
-    <div className="bg-gray-200">
+    <div className="bg-white">
       <div className="pt-10">
         <h2 className="mb-8 px-10 text-center text-5xl font-bold uppercase sm:text-start">
           Catalogo
@@ -149,7 +149,7 @@ function ProductsPage(props) {
               onChange={searcher}
               value={search}
               type="text"
-              className="w-full rounded-sm border-white bg-white px-2 py-4 text-xl text-black "
+              className="w-full rounded-sm border-white bg-slate-200 px-5 py-5 text-xl text-black placeholder-slate-500 "
               placeholder="Buscar una pieza..."
             />
             <div className="absolute mr-2 mt-1 flex items-center">
@@ -180,7 +180,7 @@ function ProductsPage(props) {
                 .map(({ name, link }, f) => (
                   <div
                     key={f}
-                    className="h-[400px] w-[250px] items-end bg-white text-black md:h-[360px] md:w-[240px] lg:h-[400px] lg:w-[20%]"
+                    className="h-[400px] w-[250px] items-end bg-white text-black drop-shadow-[0_5px_5px_rgba(0,0,0,1)] md:h-[360px] md:w-[240px] lg:h-[400px] lg:w-[20%]"
                   >
                     <div className="flex h-full w-full flex-col">
                       <div>

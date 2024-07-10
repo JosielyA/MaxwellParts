@@ -71,7 +71,7 @@ function IndexPage() {
 
           <img
             src={blanco}
-            className="invisible  absolute z-20 lg:visible lg:w-[84%]"
+            className="invisible absolute z-20 lg:visible lg:w-[84%]"
           />
         </div>
         <div className="w-full lg:w-5/12">
