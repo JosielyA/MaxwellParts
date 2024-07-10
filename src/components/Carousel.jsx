@@ -28,7 +28,7 @@ function Carousel({
       <div className="absolute inset-0 flex items-center justify-between p-4">
         <button
           onClick={prev}
-          className="z-30 rounded-full text-gray-800 lg:p-40"
+          className="z-30 rounded-full text-gray-800 lg:p-24 xl:p-36"
         >
           <ChevronLeft size={40} />
         </button>

@@ -36,19 +36,19 @@ function IndexPage() {
     <>
       <div className="z-20 flex flex-col-reverse justify-between md:flex-wrap lg:flex-row">
         <div>
-          <div className="z-30 flex h-[400px] items-center p-8 text-black md:h-[600px] md:p-16 lg:absolute lg:ml-9 lg:h-4/5 lg:w-6/12">
+          <div className="z-30 flex h-[400px] items-center p-8 text-black md:h-[350px] md:p-16 lg:absolute lg:ml-9 lg:h-[350px] lg:w-8/12 xl:h-[460px] 2xl:ml-20 2xl:h-[60%] 2xl:w-6/12">
             <div className="md:mx-10">
-              <h1 className="mb-2 text-3xl font-bold uppercase md:text-6xl">
+              <h1 className="mb-2 text-3xl font-bold uppercase lg:text-5xl xl:text-6xl 2xl:text-7xl">
                 Calidad
                 <span className="text-myred"> Garantizada.</span>
               </h1>
-              <h2 className="mb-8 text-xl font-light leading-6 md:text-2xl">
+              <h2 className="mb-8 text-xl font-light leading-6 xl:text-2xl 2xl:text-3xl">
                 Garantizamos la excelencia en cada artículo, desde la selección
                 de materiales hasta el proceso de fabricación. Revisa nuestro...
               </h2>
               <Link
                 to="/catalogo"
-                className="items-center bg-myred p-4 text-2xl font-bold text-white lg:absolute"
+                className="items-center bg-myred p-4 text-2xl font-bold text-white lg:absolute xl:text-3xl 2xl:text-4xl"
               >
                 Catalogo
               </Link>
@@ -57,10 +57,10 @@ function IndexPage() {
 
           <img
             src={blanco}
-            className="invisible  absolute z-20 lg:visible lg:w-4/6"
+            className="invisible  absolute z-20 lg:visible lg:w-[83%]"
           />
         </div>
-        <div className="w-full lg:w-7/12">
+        <div className="w-full lg:w-5/12">
           <Carousel>
             {slides.map((s, i) => (
               <img key={i} src={s} />
@@ -68,7 +68,7 @@ function IndexPage() {
           </Carousel>
         </div>
       </div>
-      <div className="z-50 mt-5 flex h-[600px] place-content-center lg:mt-0 lg:h-[700px] lg:place-content-start">
+      <div className="z-50 mt-5 flex h-[600px] place-content-center lg:mt-8 lg:h-[700px] lg:place-content-start">
         <img
           src={img2}
           className="absolute h-[500px] w-full lg:z-50 lg:-mt-10 lg:ml-20 lg:h-[700px] lg:w-5/12"

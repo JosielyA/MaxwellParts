@@ -1,5 +1,7 @@
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo-maxwell_100px.png";
+import oso from "../assets/oso-solo-color.png";
+import letras from "../assets/logo-maxwell_letras.png";
 import tiktok from "../assets/tik-tok.png";
 import insta from "../assets/instagram.png";
 import correo from "../assets/correo-electronico.png";
@@ -52,55 +54,62 @@ function Nav() {
   ];
   return (
     <div className="overflow-hidden">
-      <Link to="/" onClick={closeMenu}>
+      {/*<Link to="/" onClick={closeMenu}>
         <img
           src={logo}
           alt="Logo"
           className="absolute z-50 ml-5 mt-2 xl:size-24"
         />
-      </Link>
+      </Link>*/}
       <div
         onClick={closeMenu}
-        className="flex h-14 items-center justify-end bg-black text-white"
+        className="flex h-20 items-center justify-between bg-black text-white"
       >
-        <div className="hidden items-center space-x-2 sm:flex">
+        <img src={oso} alt="" className="ml-8 h-full md:ml-20" />
+        <div className="mr-2 hidden items-center space-x-2 sm:flex">
           <div className="relative">
             <form onSubmit={goToSearch}>
               <input
                 onChange={handleInput}
                 type="text"
                 name="search"
-                className={`h-9 rounded-sm border p-2 text-base text-black md:w-80
+                className={`h-14 rounded-sm border p-2 text-xl text-black md:w-[23rem]
               ${location.includes("/catalogo") ? "hidden" : "visible"}
               `}
                 placeholder="Buscar una pieza..."
               />
               <div className="absolute inset-y-0  end-0 flex items-center">
                 <button>
-                  <img src={buscar} alt="buscar" className="w-10 p-1" />
+                  <img src={buscar} alt="buscar" className="mr-2 w-10" />
                 </button>
               </div>
             </form>
           </div>
           <a href="https://www.tiktok.com/@maxwellparts" target="_blank">
-            <img src={tiktok} alt="tiktok logo" className="w-10" />
+            <img src={tiktok} alt="tiktok logo" className="w-14" />
           </a>
           <a
             href="https://www.instagram.com/maxwell.parts/?hl=es"
             target="_blank"
           >
-            <img src={insta} alt="Instagram logo" className="w-10" />
+            <img src={insta} alt="Instagram logo" className="w-14" />
           </a>
           <a href="https://wa.me/584129697361" target="_blank">
-            <img src={whats} alt="Whatsapp logo" className="w-10" />
+            <img src={whats} alt="Whatsapp logo" className="w-14" />
           </a>
           <a href="mailto:admin@celena-internacional.com" target="_blank">
-            <img src={correo} alt="Email logo" className="w-10" />
+            <img src={correo} alt="Email logo" className="w-14" />
           </a>
         </div>
       </div>
 
-      <div className="relative flex h-14 items-center justify-end  bg-myred font-bold text-white sm:static ">
+      <div className="relative flex h-16 items-center justify-between  bg-myred font-bold text-white sm:static ">
+        <img
+          src={letras}
+          alt=""
+          className="ml-5 h-[72px] w-[10.4rem] p-2 md:ml-[70px]"
+        />
+
         <nav>
           <button onClick={toggleMenu} className="sm:hidden">
             <img src={menu} alt="menu icon" className="mr-5 size-8" />
@@ -115,7 +124,7 @@ function Nav() {
                 className={`flex place-content-center items-center py-2 sm:py-0 
                 ${location == route && "bg-myred sm:bg-transparent"}`}
               >
-                <Link to={route} onClick={closeMenu}>
+                <Link to={route} onClick={closeMenu} className="md:text-xl">
                   {nombre}
                 </Link>
                 <div
