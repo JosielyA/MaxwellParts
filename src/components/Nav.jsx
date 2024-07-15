@@ -10,6 +10,12 @@ import buscar from "../assets/buscar.png";
 import { useRef, useState } from "react";
 import menu from "../assets/menu.png";
 
+import { AiFillTikTok } from "react-icons/ai";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaSquareWhatsapp } from "react-icons/fa6";
+import { ImMail } from "react-icons/im";
+import { BiSearch } from "react-icons/bi";
+
 function Nav() {
   const navigate = useNavigate();
   const [busqueda, setBusqueda] = useState("");
@@ -63,42 +69,42 @@ function Nav() {
       </Link>*/}
       <div
         onClick={closeMenu}
-        className="flex h-20 items-center justify-between bg-black text-white"
+        className="flex h-20 items-center justify-between bg-white text-white"
       >
         <img src={oso} alt="" className="ml-8 h-full md:ml-20" />
-        <div className="mr-2 hidden items-center space-x-2 sm:flex">
+        <div className="mr-2 hidden items-center space-x-0 sm:flex">
           <div className="relative">
             <form onSubmit={goToSearch}>
               <input
                 onChange={handleInput}
                 type="text"
                 name="search"
-                className={`h-14 rounded-sm border p-2 text-xl text-black md:w-[23rem]
+                className={`h-14 rounded-sm border border-black p-2 text-xl text-black placeholder-slate-500 md:w-[23rem]
               ${location.includes("/catalogo") ? "hidden" : "visible"}
               `}
                 placeholder="Buscar una pieza..."
               />
-              <div className="absolute inset-y-0  end-0 flex items-center">
+              <div className="absolute inset-y-0 end-0 flex items-center">
                 <button>
-                  <img src={buscar} alt="buscar" className="mr-2 w-10" />
+                  <BiSearch className="mr-2 size-10 text-black" />
                 </button>
               </div>
             </form>
           </div>
           <a href="https://www.tiktok.com/@maxwellparts" target="_blank">
-            <img src={tiktok} alt="tiktok logo" className="w-14" />
+            <AiFillTikTok className="size-[4.5rem] text-black" />
           </a>
           <a
             href="https://www.instagram.com/maxwell.parts/?hl=es"
             target="_blank"
           >
-            <img src={insta} alt="Instagram logo" className="w-14" />
+            <FaSquareInstagram className="size-[4.2rem] text-black" />
           </a>
           <a href="https://wa.me/584129697361" target="_blank">
-            <img src={whats} alt="Whatsapp logo" className="w-14" />
+            <FaSquareWhatsapp className="size-[4.2rem] text-black" />
           </a>
           <a href="mailto:admin@celena-internacional.com" target="_blank">
-            <img src={correo} alt="Email logo" className="w-14" />
+            <ImMail className="size-[4.2rem] p-1 text-black" />
           </a>
         </div>
       </div>
