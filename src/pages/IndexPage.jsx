@@ -8,7 +8,7 @@ import slider5 from "..//assets/51 PROTECTOR DE VOLT 220V.png";
 import slider6 from "..//assets/58 RELAY FAN 364.png";
 import slider7 from "..//assets/62 RELOJ DE NEVERA.png";
 import slider8 from "..//assets/66 ROLINERA 6000.png";
-import img2 from "../assets/Call-center.png";
+import img2 from "../assets/portrait-woman-customer-service-worker.jpg";
 import blanco from "../assets/blanco diagonal.png";
 import dialogo from "../assets/burbuja-de-dialogo.png";
 import producto from "../assets/producto.png";
