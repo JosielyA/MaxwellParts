@@ -1,12 +1,6 @@
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../assets/logo-maxwell_100px.png";
-import oso from "../assets/oso-solo-color.png";
-import letras from "../assets/logo-maxwell_letras.png";
-import tiktok from "../assets/tik-tok.png";
-import insta from "../assets/instagram.png";
-import correo from "../assets/correo-electronico.png";
-import whats from "../assets/whatsapp.png";
-import buscar from "../assets/buscar.png";
+import logo from "../assets/logoo.png";
+
 import { useRef, useState } from "react";
 import menu from "../assets/menu.png";
 
@@ -60,26 +54,25 @@ function Nav() {
   ];
   return (
     <div className="overflow-hidden">
-      {/*<Link to="/" onClick={closeMenu}>
+      <Link to="/" onClick={closeMenu}>
         <img
           src={logo}
           alt="Logo"
-          className="absolute z-50 ml-5 mt-2 xl:size-24"
+          className=":w-36 absolute z-50 ml-10 mt-2 w-40 xl:w-44"
         />
-      </Link>*/}
+      </Link>
       <div
         onClick={closeMenu}
-        className="flex h-20 items-center justify-between bg-white text-white"
+        className="flex h-20 items-center justify-end bg-white text-white"
       >
-        <img src={oso} alt="" className="ml-8 h-full md:ml-20" />
         <div className="mr-2 hidden items-center space-x-0 sm:flex">
           <div className="relative">
-            <form onSubmit={goToSearch}>
+            <form onSubmit={goToSearch} className="hidden md:flex">
               <input
                 onChange={handleInput}
                 type="text"
                 name="search"
-                className={`h-14 rounded-sm border border-black p-2 text-xl text-black placeholder-slate-500 md:w-[23rem]
+                className={`h-14 rounded-sm border border-black p-2 text-xl text-black placeholder-slate-500 md:w-[18rem] lg:w-[23rem]
               ${location.includes("/catalogo") ? "hidden" : "visible"}
               `}
                 placeholder="Buscar una pieza..."
@@ -109,13 +102,7 @@ function Nav() {
         </div>
       </div>
 
-      <div className="relative flex h-16 items-center justify-between  bg-white font-bold text-white sm:static ">
-        <img
-          src={letras}
-          alt=""
-          className="ml-5 h-[72px] w-[10.4rem] p-2 md:ml-[70px]"
-        />
-
+      <div className="relative flex h-16 items-center justify-end  bg-white font-bold text-white sm:static ">
         <nav>
           <button onClick={toggleMenu} className="sm:hidden">
             <img src={menu} alt="menu icon" className="mr-5 size-8" />

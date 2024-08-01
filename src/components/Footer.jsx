@@ -1,5 +1,5 @@
 import React from "react";
-import oso from "../assets/oso-solo-color.png";
+import oso from "../assets/osoblanco.png";
 import tiktok from "../assets/tik-tok.png";
 import insta from "../assets/instagram.png";
 import correo from "../assets/correo-electronico.png";
